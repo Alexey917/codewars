@@ -1,6 +1,6 @@
 # Codewars
 
-Задачи codewars.com 
+Задачи с codewars.com 
 
 ## Технологический стек
 
