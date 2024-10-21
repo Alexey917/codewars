@@ -1,27 +1,26 @@
 def max_sequence(arr):
-    sums = []
-    aaa = []
-    if len(arr) == 0:
-        return 0
+    res = []
     for i in range(len(arr)):
         s = 0
-        a = []
-        arr_flags = []
+        count = 0
+        temp = []
         for j in range(i, len(arr)):
-            flag = True
-            if arr[j] < 0:
-                flag = False
-            arr_flags.append(flag)
+            if j < 0:
+                count += 1
+
             s += arr[j]
-            a.append(arr[j])
-        if True in arr_flags:
-            pass
-        else:
-            s = 0
-        sums.append(s)
-        aaa.append(a)
-    print(aaa)
-    return max(sums)
+
+            if count == len(arr) - 1:
+                s = 0
+                temp.append(s)
+            else:
+                temp.append(s)
+        res.append(max(temp))
+
+    print(res)
+    max_sum = max(res)
+
+    return max_sum
 
 
-print(max_sequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+print(max_sequence([-20, 10, -3, 4, -10, 20, 10, -5, 4]))
